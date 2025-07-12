@@ -33,10 +33,6 @@ import Layout from "../layouts/Layout.astro";
     </div>
     <div class="hero-content">
       <div class="hero-text">
-        <div class="hero-badge">
-          <span class="badge-icon">⚡</span>
-          <span>Powered by Sui Network</span>
-        </div>
         <h1 class="hero-title">
           <span class="title-line">Pioneering the</span>
           <span class="title-line gradient-text">Future of Blockchain</span>
@@ -451,12 +447,18 @@ import Layout from "../layouts/Layout.astro";
   .navbar {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
     transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
   }
 
   .nav-container {
@@ -474,18 +476,23 @@ import Layout from "../layouts/Layout.astro";
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
+    overflow: hidden;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
   }
 
   .logo-glow {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
     background: var(--gradient-primary);
-    filter: blur(10px);
-    opacity: 0.3;
+    filter: blur(6px);
+    opacity: 0.1;
     z-index: -1;
+    border-radius: 6px;
   }
 
   .nav-links {
@@ -543,6 +550,8 @@ import Layout from "../layouts/Layout.astro";
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    margin-top: 0;
+    padding-top: 70px;
   }
 
   .hero-background {
@@ -606,38 +615,6 @@ import Layout from "../layouts/Layout.astro";
     grid-template-columns: 1.2fr 1fr;
     gap: 4rem;
     align-items: center;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(0, 212, 255, 0.1);
-    border: 1px solid rgba(0, 212, 255, 0.3);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    animation: fadeInUp 1s ease-out forwards;
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  .badge-icon {
-    font-size: 1.2rem;
-    animation: sparkle 2s ease-in-out infinite;
-  }
-
-  @keyframes sparkle {
-    0%,
-    100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
   }
 
   .hero-title {

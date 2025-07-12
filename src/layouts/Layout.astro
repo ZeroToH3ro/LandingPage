@@ -1,0 +1,81 @@
+---
+export interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "CommandOSS - Pioneering the Future of Blockchain Development",
+	description = "Backed by Mysten Labs, CommandOSS empowers the software industry through advanced Sui blockchain solutions for government, enterprise, startups, and the broader ecosystem."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/commandoss-favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="keywords" content="CommandOSS, Sui Network, Blockchain, Mysten Labs, NFT, AI, IoT, Cryptocurrency" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		
+		<title>{title}</title>
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	* {
+		box-sizing: border-box;
+	}
+	
+	html {
+		scroll-behavior: smooth;
+	}
+	
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: 'Inter', system-ui, sans-serif;
+		background: #0a0a0a;
+		color: #ffffff;
+		line-height: 1.6;
+		overflow-x: hidden;
+	}
+	
+	/* Custom scrollbar */
+	::-webkit-scrollbar {
+		width: 8px;
+	}
+	
+	::-webkit-scrollbar-track {
+		background: #1a1a1a;
+	}
+	
+	::-webkit-scrollbar-thumb {
+		background: linear-gradient(135deg, #00d4ff, #0099cc);
+		border-radius: 4px;
+	}
+	
+	::-webkit-scrollbar-thumb:hover {
+		background: linear-gradient(135deg, #0099cc, #00d4ff);
+	}
+</style>
